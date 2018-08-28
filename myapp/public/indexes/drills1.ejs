@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="side" ng-controller="myCtrl">
+        <h2>Drill Types</h2>
+            <div class="main">
+                <div>
+                    <p>Please select a drill</p>
+                    
+                    <div ng-repeat="drl in drills">
+                        <drill-type drill="drl"></drill-type>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

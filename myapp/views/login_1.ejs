@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Page Title</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+				
+		<link rel="stylesheet" type="text/css" href="stylesheets/common_theme.css" />
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+				<style>
+		</style>
+			</head>
+			<body>
+
+				<div class="header">
+					<h1>My Website</h1>
+					<p>A website created by me.</p>
+				</div>
+
+				<div class="navbar">
+					<a href="/about">About</a>
+					<a href="/register">Register</a>
+					<a href="/login">Login</a>
+					<a href="/getteam">Pick a team</a>
+					<a href="/calendar">View Schedule</a>
+					<a href="#" class="right">Link</a>
+				</div>
+
+				<div class="row">
+					<div class="side">
+						<h2>REGISTER</h2>
+						
+						
+						
+							<div class="main">
+								
+								<p>Register a user please</p>
+								<div ng-app = "mainApp" ng-controller = "loginUser">
+									<form name = "login" action="" method="">
+										<table border="0">
+											<tr>
+												
+												<td>Username </td><td> <input type = "text" ng-model="username" name="username" required>{{ username }}
+													<span style = "color:red" ng-show = "login.username.$dirty && login.username.$invalid">
+														<span ng-show = "login.username.$error.required">Username required.</span>
+														
+													 </span>
+												</td>
+												
+											</tr>
+											
+											
+											<tr>
+												<td>Password </td><td><input type = "password" ng-model="pass" name="pass" required>
+													<span style = "color:red" ng-show = "login.pass.$dirty && login.pass.$invalid">
+														<span ng-show = "login.pass.$error.required">Password is required.</span>
+														
+													</span>
+												</td>
+											
+											
+											</tr>
+											<tr><td><input type="submit" value="Login"></td><td><input type="submit" value="RESET" ng-click="reset()"></td></tr>
+											
+										</table>
+										
+									</form>
+								</div>
+								
+						
+
+								<script>
+								var app = angular.module('mainApp', []);
+								app.controller('loginUser', function($scope) {
+									
+									$scope.username = "Enter your username"
+									
+									$scope.reset = function() {
+										$scope.username = "";
+										$scope.pass = "";
+									};
+									$scope.reset();
+								});
+								</script>
+							</div>
+					</div>
+				</div>
+
+					<div class="footer">
+						<h2>Footer</h2>
+					</div>
+
+						</body>
+					</html>
+					

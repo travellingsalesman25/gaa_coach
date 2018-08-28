@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Page Title</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+				
+		<link rel="stylesheet" type="text/css" href="stylesheets/common_theme.css" />
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+				<style>
+		</style>
+			</head>
+			<body>
+
+				<div class="header">
+					<h1>My Website</h1>
+					<p>A website created by me.</p>
+				</div>
+
+				<div class="navbar">
+					<a href="/about">About</a>
+					<a href="/register">Register</a>
+					<a href="/login">Login</a>
+					<a href="#" class="right">Link</a>
+				</div>
+
+				<div class="row">
+					<div class="side">
+						<h2>REGISTER</h2>
+						
+						
+						
+							<div class="main">
+								
+								<p>Register a user please</p>
+								<div ng-app = "mainApp" ng-controller = "registerUser">
+									<form name = "register" action="" method="">
+										<table border="0">
+											<tr>
+												
+												<td>Username </td><td> <input type = "text" ng-model="username" name="username" required>
+													<span style = "color:red" ng-show = "register.username.$dirty && register.username.$invalid && register.username.$touched">
+														<span ng-show = "register.username.$error.required">Username required.</span>
+														<span ng-show = "register.username.$error.email">Invalid username.</span>
+													 </span>
+												</td>
+												
+											</tr>
+											
+											
+											<tr> 
+												<td>Email : </td><td> <input type = "email" ng-model="email" name="email" required>
+												<span style = "color:red" ng-show = "register.email.$dirty && register.email.$invalid">
+													<span ng-show = "register.email.$error.required">Email is required.</span>
+													<span ng-show = "register.email.$error.email">Invalid email address.</span>
+												 </span> </td>
+											</tr>
+											
+											<tr>
+												<td>Password </td><td><input type = "password" ng-model="pass" name="pass" required>
+													<span style = "color:red" ng-show = "register.pass.$dirty && register.pass.$invalid">
+														<span ng-show = "register.pass.$error.required">Password is required.</span>
+														<span ng-show = "register.pass.$error.email">Invalid password.</span>
+													</span>
+												</td>
+											
+											
+											</tr>
+											<tr><td><input type="submit" value="REGISTER"></td><td><input type="submit" value="RESET" ng-click="reset()"></td></tr>
+											
+										</table>
+										
+									</form>
+								</div>
+								
+						
+
+								<script>
+								var app = angular.module('mainApp', []);
+								app.controller('registerUser', function($scope) {
+									$scope.master = {username: "Please enter a username", email: "Please enter an email", pass:"Invalid pass"};
+									$scope.reset = function() {
+										$scope.user = angular.copy($scope.master);
+									};
+									$scope.reset();
+								});
+								</script>
+							</div>
+					</div>
+				</div>
+
+					<div class="footer">
+						<h2>Footer</h2>
+					</div>
+
+						</body>
+					</html>
+					

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Page Title</title>
+		<script src = "https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <!-- Include the AngularJS routing library -->
+        <script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+				
+		<link rel="stylesheet" type="text/css" href="stylesheets/common_theme.css" />
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+				<style>
+		</style>
+			</head>
+			<body ng-app="TrainingDrillApp">
+
+				<div class="header">
+					<h1>GAA Coach INDEX</h1>
+					<p>A website created by me.</p>
+				</div>
+
+				<div class="navbar">
+					<a href="/about">About</a>
+					<a href="/">Home</a>
+					<a href="/register">Register</a>
+					<a href="/login">Login</a>
+					<a href="#!drills">Drills</a>
+				</div>
+
+
+				<div ng-view></div>
+
+				
+
+					<div class="footer">
+						<h2>Footer</h2>
+					</div>
+				<!-- Modules -->
+				<script src="javascripts/app.js"></script>
+
+				<!-- Controllers -->
+				<script src="javascripts/controllers/mainController.js"></script>
+				<script src="javascripts/controllers/createDrill.js"></script>
+				<!--directives-->
+				<script src="javascripts/directives/drillInfo.js"></script>
+				<script src="javascripts/directives/homeOptions.js"></script>
+			
+			</body>
+</html>
+					

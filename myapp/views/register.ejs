@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>GAA fantasy</title>
+		<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+				
+				<link rel="stylesheet" type="text/css" href="stylesheets/common_theme.css" />
+			</head>
+			<body>
+
+				
+
+				<header>
+					<h2>Register GAA manager <%= title %>
+						</h2>
+					</header>
+
+					<section>
+						<nav style="width:20%">
+							<ul>
+								<li>
+									<a href="/about">About</a>
+								</li>
+								<li>
+									<a href="/register">Register</a>
+								</li>
+								<li>
+									<a href="/login">Login</a>
+								</li>
+							</ul>
+						</nav>
+
+						<form name = "register" action="/register_user" method="POST">
+							<div ng-app="">
+								<p>username : </p><input type = "text" ng-model="username" name="username"/>&nbsp;<text>username entered is : </text><text ng-bind="username"></text><br/>
+								<p>email : </p><input type = "text" name="email"/><br/>
+								<p>password : </p><input type = "password" name="pass"/><br/>
+								<input type="submit" value="REGISTER">
+							</div>
+							
+						</form>
+					</section>
+
+					<footer>
+						<p>&copy; GlenBegLake</p>
+					</footer>
+
+				</body>
+			</html>
+			
