@@ -3,10 +3,10 @@ var app = angular.module('TrainingDrillApp', ['ngRoute']);
 app.config(function($routeProvider){
 
     $routeProvider
-        .when('/handling',{
+        .when('/',{
             templateUrl:'/indexes/home.ejs'
         })
-        .when('/ballWork',{
+        .when('/about',{
             //controller:'drillType',
             templateUrl:'/indexes/drill_type.ejs'
         })
@@ -14,8 +14,17 @@ app.config(function($routeProvider){
             controller:'createDrill',
             templateUrl:'/indexes/new_drill.ejs'
         })
+        .when('/register',{
+            controller:'createUser',
+            templateUrl:'/indexes/createuser.ejs'
+        })
+        .when('/login',{
+            controller:'loginUser',
+            templateUrl:'/indexes/loginuser.ejs'
+        })
         .when('/drills',{
             controller:'myCtrl',
             templateUrl:'/indexes/drills1.ejs'
         });
 });
+

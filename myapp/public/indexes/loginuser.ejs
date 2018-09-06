@@ -1,0 +1,17 @@
+<div class="row" ng-controller="loginUser">
+    <p>{{user.data.email}}</p>
+    <div class="side">
+        <h2>login user</h2>
+            <p>{{errorMessage}}</p>
+            <p>{{successMsg}}</p>
+            <div class="main">
+                <div>
+                    <form ng-submit="userLogin()">
+                        <label>Email address : </label><input ng-model="formData.userEmail" type="email">
+                        <label>Password : </label><input ng-model="formData.userPass" type="password">
+                        <input type="submit" value="Login User">
+                    </form>
+                </div>
+            </div>
+    </div>
+</div>

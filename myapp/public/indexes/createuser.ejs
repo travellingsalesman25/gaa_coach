@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="side">
+        <h2>create user</h2>
+            <p>{{errorMsg}}</p>
+            <div class="main">
+                <div>
+                    <form ng-submit="userCreate()">
+                        <label>Email address : </label><input ng-model="formData.userEmail" type="email">
+                        <label>Password : </label><input ng-model="formData.userPass" type="password">
+                        <input type="submit" value="Create User">
+                    </form>
+                </div>
+            </div>
+    </div>
+</div>
