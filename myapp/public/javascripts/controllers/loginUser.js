@@ -1,6 +1,6 @@
-app.controller('loginUser',['$scope','auth','$http',function($scope,auth,$http){
-   
-   
+app.controller('loginUser',['$scope','auth','$http','$location',function($scope,auth,$http,$location){
+
+    $scope.user=null;
     auth.getUser().then(function(data){
         console.log("AUTH IS")
         console.log(data);
@@ -17,6 +17,7 @@ app.controller('loginUser',['$scope','auth','$http',function($scope,auth,$http){
         then(function(response){
             console.log('POST OK');
             $scope.successMsg = response.data;
+            $location.path("/");
             console.log(response);
         }).catch(function(response){
             console.error('POST BAD');

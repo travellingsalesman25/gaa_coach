@@ -1,6 +1,15 @@
 
 <h2>Home page</h2>
-	<div class="main">
+	<div class="main" ng-controller="homeController">
+		<div class="navbar">
+			<a href="#!about">About</a>
+			<a href="/#!">Home</a>
+			<a href="#!register" ng-show="user.data.email==null">Register</a>
+			<a href="#!login" ng-show="user.data.email==null" >Login</a>
+			<a href="#!drills">Drills</a>
+			<a href="#!create_drill" ng-show="user.data.email!=null">Create new drill</a>
+		</div>
+		<p ng-show="user.data.email!=null">{{user.data.email}}</p>
 		<div>
 			
 			<p>Welcome to GAA coach where you can create your own training session and share your and collaborate with coaches nationwide</p>

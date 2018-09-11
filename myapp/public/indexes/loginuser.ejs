@@ -1,17 +1,28 @@
-<div class="row" ng-controller="loginUser">
-    <p>{{user.data.email}}</p>
-    <div class="side">
-        <h2>login user</h2>
-            <p>{{errorMessage}}</p>
-            <p>{{successMsg}}</p>
-            <div class="main">
-                <div>
-                    <form ng-submit="userLogin()">
-                        <label>Email address : </label><input ng-model="formData.userEmail" type="email">
-                        <label>Password : </label><input ng-model="formData.userPass" type="password">
-                        <input type="submit" value="Login User">
-                    </form>
+<div ng-controller="loginUser">
+        
+    <div class="navbar">
+        <a href="#!about">About</a>
+        <a href="/#!/">Home</a>
+        <a href="#!register" ng-show="user.data.email==null">Register</a>
+        <a href="#!login" ng-show="user.data.email==null" >Login</a>
+        <a href="#!drills">Drills</a>
+        <a href="#!create_drill" ng-show="user.data.email!=null">Create new drill</a>
+    </div>
+    <p ng-show="user.data.email!=null">{{user.data.email}}</p>
+    <div class="row">
+        <div class="side">
+            <h2>login user</h2>
+                <p>{{errorMessage}}</p>
+                <p>{{successMsg}}</p>
+                <div class="main">
+                    <div>
+                        <form ng-submit="userLogin()">
+                            <label>Email address : </label><input ng-model="formData.userEmail" type="email">
+                            <label>Password : </label><input ng-model="formData.userPass" type="password">
+                            <input type="submit" value="Login User">
+                        </form>
+                    </div>
                 </div>
-            </div>
+        </div>
     </div>
 </div>

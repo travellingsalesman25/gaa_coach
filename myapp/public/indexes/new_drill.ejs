@@ -1,8 +1,19 @@
-<div class="main"></div>
-    <h2>You can create a new drill</h2>
-    <form ng-submit="submitForm()">
+<div>
+    <div class="navbar">
+        <a href="#!about">About</a>
+        <a href="/">Home</a>
+        <a href="#!register" ng-show="user.data.email==null">Register</a>
+        <a href="#!login" ng-show="user.data.email==null" >Login</a>
+        <a href="#!drills">Drills</a>
+        <a href="#!create_drill" ng-show="user.data.email!=null">Create new drill</a>
+    </div>
+    <div class="main">
+        <p ng-show="user.data.email!=null">You are logged in as {{user.data.email}}</p>
+        <h2>You can create a new drill</h2>
+        <form ng-submit="submitForm()">
 
-        <p>Drill name : </p><input type="text" ng-model="formData.drill_name" />
-        <input type="submit" id="submit" value="Submit"/>
-    </form>
+            <p>Drill name : </p><input type="text" ng-model="formData.drill_name" />
+            <input type="submit" id="submit" value="Submit"/>
+        </form>
+    </div>
 </div>

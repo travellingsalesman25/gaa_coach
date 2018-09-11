@@ -1,0 +1,9 @@
+app.directive('navigationLinks',function(){
+    return{
+        restrict:'E',
+        scope:{
+            useremail:'='
+        },
+        templateUrl:'javascripts/directives/navLinks.html'
+    };
+});
