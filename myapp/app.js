@@ -6,6 +6,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var firebase = require("firebase"); 
 var session = require('express-session');
+var serviceAccount = require('./serviceAccountKey.json');
 
 
 var app = express();
@@ -21,20 +22,19 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing       application/x-www-form-urlencoded
 
 
+
 var config = {
     apiKey: "AIzaSyCdw9lXLXCrd93SSwn4098hN3ihjACnr_Q",
     authDomain: "trainingdrills-5ba69.firebaseapp.com",
     databaseURL: "https://trainingdrills-5ba69.firebaseio.com",
-    storageBucket: "trainingdrills-5ba69.appspot.com"
+    projectId: "trainingdrills-5ba69",
+    storageBucket: "trainingdrills-5ba69.appspot.com",
+    messagingSenderId: "89924554550"
   };
   firebase.initializeApp(config);
-
   
 
-
-
-
-
+  
 app.get("/", (req, res) => {
 	res.render("index");
 });
@@ -89,17 +89,22 @@ app.post('/login_user',function(req,res){
 })
 
 app.post('/create_drill',function(req,res){
-	var refDrill = firebase.database().ref("drills/")
-	refDrill.push({
-		name:req.body.drill_name
-	}).then(function(){
-		console.log("DB WRITE OK");
-	}).catch(function(){
-		console.log("FAILED TO WRITE TO DB");
-	});
+
 	
-	console.log(req.body.drill_name);
-	res.end()
+
+	console.log("REQUEST IS : \n"+req.body[0].data+"\n");
+	//console.log(firebase);
+	var refDrill = firebase.database().ref("/drills");
+	//console.log(refDrill);
+	refDrill.set({
+		test:req.body[0].data,
+		drill_details: req.body[0]
+	}).then(function(){
+		console.log('Saving Updated');
+		//res.json({ success: 'DB WRITE SUCCESS' });
+	 });
+	
+	res.send("finished");
 })
 
 

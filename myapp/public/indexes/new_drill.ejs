@@ -10,9 +10,9 @@
     <div class="main">
         <p ng-show="user.data.email!=null">You are logged in as {{user.data.email}}</p>
         <h2>You can create a new drill</h2>
-        <form ng-submit="submitForm()">
+        <form ng-submit="submitForm()" name="newDrill">
            <!--  name the drill -->
-            <input name="drill_name" type="text" id="drill_name"/>
+            <input name="drill_name" type="text" id="drill_name" ng-model="drill_name"/>
             <select name="drill_type">
                 <option value="ball_work">Ball work</option>
                 <option value="handling">Handling</option>
@@ -21,13 +21,12 @@
                 <option value="attacking">Attacki</option>
             </select>
             <!--create steps fro the drill-->
+            <p>{{drillsteps}}</p>
             <div class="drill_steps" ng-repeat="step in drillsteps">
-
-                <textarea rows="4" cols="50" name="{{step.name}}" placeholder="Enter a new drill step" value="{{step.id}}"></textarea>
+                <textarea rows="4" cols="50" placeholder="Enter a new drill step"  ng-model="step.data"></textarea>
                 <button ng-show="showAddStep(step)" ng-click="addNewStep()">Add Step</button>
                 <button ng-show="showAddStep(step)" ng-click="removeNewStep()">Remove Step</button>
-                
-              </div>
+            </div>
             <input type="submit" id="submit" value="Submit"/>
         </form>
     </div>
